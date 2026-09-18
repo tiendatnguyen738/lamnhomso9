@@ -799,22 +799,227 @@ img { max-width: 100%; display: block; }
 }
 
 /* Nhóm logo + tên công ty */
+/* =========================================
+   LOGO ĐỘNG - THU RA CUỘN VÀO LIÊN TỤC
+   ========================================= */
+/* =========================================
+   LOGO EFFECT - BÙNG CHÁY & XUẤT HIỆN
+   ========================================= */
+/* =========================================
+   LOGO V-TRAVEL - THU VÀO BUNG RA + ĐÁM MÂY
+   ========================================= */
 .logo-group {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 20px;
+    position: relative;
+    background: transparent;
 }
 
-/* Ảnh logo - BÉ LẠI */
+/* Ảnh Logo - Hình tròn */
 #logo {
     width: 90px;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    
+    /* Animation thu vào bung ra liên tục */
+    animation: thuVaoBungRa 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
-#logo:hover {
-    transform: scale(1.08);
+/* Hiệu ứng lửa bao quanh logo */
+#logo::before {
+    content: '';
+    position: absolute;
+    top: -15px; left: -15px; right: -15px; bottom: -15px;
+    background: radial-gradient(circle, rgba(255,100,0,0.8) 0%, rgba(255,50,0,0.4) 40%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: luaThuBung 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+#logo::after {
+    content: '';
+    position: absolute;
+    top: -25px; left: -25px; right: -25px; bottom: -25px;
+    background: radial-gradient(circle, rgba(255,150,0,0.5) 0%, rgba(255,80,0,0.2) 50%, transparent 70%);
+    border-radius: 50%;
+    z-index: -2;
+    animation: luaThuBung 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s infinite;
+}
+
+/* Tên công ty */
+.company-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    z-index: 2;
+    opacity: 0;
+    animation: tenXuatHien 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    position: relative;
+}
+
+.company-brand {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff6b35;
+    text-shadow: 0 0 10px rgba(255,107,53,0.8);
+    position: relative;
+}
+
+/* =========================================
+   ĐÁM MÂY DƯỚI CHỮ V-TRAVEL
+   ========================================= */
+.company-brand::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    
+    /* Tạo hình đám mây bằng box-shadow */
+    background: transparent;
+    box-shadow: 
+        /* Đám mây chính - màu vàng gold */
+        inset 0 -8px 0 rgba(255, 215, 0, 0.6),
+        inset 0 -15px 0 rgba(255, 200, 0, 0.4),
+        
+        /* Các đám mây nhỏ hai bên */
+        -25px -5px 0 -5px rgba(255, 215, 0, 0.5),
+        25px -5px 0 -5px rgba(255, 215, 0, 0.5),
+        -40px -8px 0 -10px rgba(255, 215, 0, 0.3),
+        40px -8px 0 -10px rgba(255, 215, 0, 0.3);
+    
+    border-radius: 50%;
+    opacity: 0;
+    animation: damMayXuatHien 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* Đám mây phụ - trang trí thêm */
+.company-name::before {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: -10px;
+    width: 40px;
+    height: 12px;
+    background: rgba(255, 215, 0, 0.4);
+    border-radius: 50%;
+    box-shadow: 
+        100px 5px 0 -3px rgba(255, 215, 0, 0.4),
+        -20px 10px 0 -5px rgba(255, 215, 0, 0.3);
+    opacity: 0;
+    animation: damMayNho 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s infinite;
+}
+
+/* =========================================
+   KEYFRAMES - THU VÀO BUNG RA
+   ========================================= */
+
+/* Logo: Thu nhỏ -> Bung mạnh -> Trở về */
+@keyframes thuVaoBungRa {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+        filter: brightness(1); 
+    }
+    25% { 
+        transform: scale(0.3) rotate(-180deg); 
+        filter: brightness(0.6); 
+    }
+    50% { 
+        transform: scale(1.5) rotate(0deg); 
+        filter: brightness(1.5) drop-shadow(0 0 40px rgba(255,150,0,1)); 
+    }
+    75% { 
+        transform: scale(0.9) rotate(5deg); 
+        filter: brightness(1.1); 
+    }
+}
+
+/* Lửa: Thu theo logo */
+@keyframes luaThuBung {
+    0%, 100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+    }
+    25% { 
+        opacity: 0.8; 
+        transform: scale(0.5); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(2); 
+    }
+    75% { 
+        opacity: 0.6; 
+        transform: scale(1.2); 
+    }
+}
+
+/* Tên công ty: Ẩn khi logo thu, hiện khi logo bung */
+@keyframes tenXuatHien {
+    0%, 100% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+    25% { 
+        opacity: 0; 
+        transform: translateX(-30px) scale(0.5); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: translateX(10px) scale(1.1); 
+    }
+    75% { 
+        transform: translateX(0) scale(1); 
+    }
+}
+
+/* Đám mây chính xuất hiện */
+@keyframes damMayXuatHien {
+    0%, 100% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(1); 
+    }
+    25% { 
+        opacity: 0; 
+        transform: translateX(-50%) scale(0.3); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(1.2); 
+    }
+    75% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(0.95); 
+    }
+}
+
+/* Đám mây phụ */
+@keyframes damMayNho {
+    0%, 100% { 
+        opacity: 0.8; 
+        transform: translateY(0); 
+    }
+    25% { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: translateY(-5px); 
+    }
+    75% { 
+        opacity: 0.9; 
+        transform: translateY(0); 
+    }
 }
 
 /* Tên công ty */
@@ -894,4 +1099,416 @@ img { max-width: 100%; display: block; }
         font-size: 13px;
         padding: 6px 10px;
     }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+    padding: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #667eea;
+}
+
+/* Search Section */
+.search-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.trip-type {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-search {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Results Section */
+.results-section {
+    display: none;
+}
+
+.results-section.active {
+    display: block;
+}
+
+.flight-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flight-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.flight-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border-color: #667eea;
+}
+
+.flight-info {
+    flex: 1;
+}
+
+.airline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.airline i {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.flight-number {
+    background: #667eea;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.flight-time {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.flight-class {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.flight-price {
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.btn-select {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-select:hover {
+    background: #764ba2;
+}
+
+/* Booking Section */
+.booking-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.booking-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.form-section h3 {
+    margin-bottom: 1rem;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.booking-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.booking-summary h3 {
+    margin-bottom: 1rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.price-row.total {
+    border-top: 2px solid rgba(255,255,255,0.3);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.btn-book {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #667eea;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .flight-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .flight-price {
+        text-align: center;
+    }
+}
 }
