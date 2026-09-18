@@ -7,24 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container header-inner">
-            <div class="logo">
-                <i class="fas fa-hotel"></i>
-                <img src="" alt="">
-                <span>V-Travel</span>
-            </div>
-            <nav class="nav">
-                <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
-                <a href="flight.html"><i class="fas fa-info-circle"></i> tìm vé máy bay</a>
-                <a href="cruise.html">tìm du thuyền</a>
-                <a href="hotel.html">Tìm Khách Sạn</a>
-                <a href="#" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
-            </nav>
+        <nav class="navbar">
+    <!-- Wrap logo + tên công ty vào 1 div -->
+    <div class="logo-group">
+        <img id="logo" src="./img/anh logo.jpg" alt="V-Travel">
+        <div class="company-name">
+            <span class="company-brand">V-Travel</span>
         </div>
-    </header>
-
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="index.html" >Trang Chủ</a></li>
+        <li><a href="flight.html">Tìm Vé Máy Bay</a></li>
+        <li><a href="cruise.html">Tìm Du Thuyền</a></li>
+        <li><a href="hotel.html">Tìm Khách Sạn</a></li>
+        <li><a href="auth.html">Đăng Ký / Đăng Nhập</a></li>
+    </ul>
+</nav>
     <!-- HERO + SEARCH -->
     <section class="hero">
         <div class="hero-overlay"></div>
