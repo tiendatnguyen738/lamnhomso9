@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Nghỉ - Khách Sạn 5 Sao</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-hotel"></i> Luxury Hotel</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home">Trang Chủ</a>
+                <a href="#rooms">Phòng Nghỉ</a>
+                <a href="#services">Dịch Vụ</a>
+                <a href="#contact">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div> <!-- Thêm overlay để khớp với CSS -->
+        <div class="container hero-content">
+            <h1>Trải Nghiệm Sang Trọng Đẳng Cấp 5 Sao</h1>
+            <p>Khám phá không gian nghỉ dưỡng hoàn hảo với những tiện nghi cao cấp nhất</p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms-section" id="rooms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Các Loại Phòng</h2>
+                <p>Lựa chọn phòng nghỉ phù hợp với nhu cầu của bạn</p>
+            </div>
+
+            <div class="rooms-grid">
+                <!-- Room 1: Deluxe Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800" alt="Deluxe Room">
+                        <div class="room-badge">Phổ Biến</div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Phòng Deluxe</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 35m²</span>
+                            <span><i class="fas fa-user"></i> 2 Người</span>
+                            <span><i class="fas fa-bed"></i> 1 Giường King</span>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><i class="fas fa-wifi"></i> WiFi miễn phí</li>
+                            <li><i class="fas fa-tv"></i> TV màn hình phẳng 55"</li>
+                            <li><i class="fas fa-snowflake"></i> Điều hòa</li>
+                            <li><i class="fas fa-coffee"></i> Mini bar</li>
+                            <li><i class="fas fa-bath"></i> Phòng tắm cao cấp</li>
+                            <li><i class="fas fa-concierge-bell"></i> Dịch vụ phòng 24/7</li>
+                        </ul>
+                        <div class="room-price">
+                            <div class="price">
+                                <span class="amount">2,500,000₫</span>
+                                <span class="period">/ đêm</span>
+                            </div>
+                            <button class="btn-book-room">Đặt Ngay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2: Executive Suite -->
+                <div class="room-card featured">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Executive Suite">
+                        <div class="room-badge premium">Cao Cấp</div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Phòng Executive Suite</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 55m²</span>
+                            <span><i class="fas fa-user"></i> 3 Người</span>
+                            <span><i class="fas fa-bed"></i> 1 Giường King + Sofa</span>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><i class="fas fa-wifi"></i> WiFi tốc độ cao</li>
+                            <li><i class="fas fa-tv"></i> 2 TV màn hình phẳng</li>
+                            <li><i class="fas fa-coffee"></i> Phòng khách riêng</li>
+                            <li><i class="fas fa-wine-glass-alt"></i> Quầy bar mini</li>
+                            <li><i class="fas fa-hot-tub"></i> Bồn tắm Jacuzzi</li>
+                            <li><i class="fas fa-utensils"></i> Ăn sáng cao cấp</li>
+                        </ul>
+                        <div class="room-price">
+                            <div class="price">
+                                <span class="amount">4,500,000₫</span>
+                                <span class="period">/ đêm</span>
+                            </div>
+                            <button class="btn-book-room">Đặt Ngay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3: Presidential Suite -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800" alt="Presidential Suite">
+                        <div class="room-badge luxury">Thượng Hạng</div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Presidential Suite</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+                            <span><i class="fas fa-user"></i> 4 Người</span>
+                            <span><i class="fas fa-bed"></i> 2 Phòng ngủ</span>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><i class="fas fa-swimming-pool"></i> Hồ bơi riêng</li>
+                            <li><i class="fas fa-utensils"></i> Bếp đầy đủ tiện nghi</li>
+                            <li><i class="fas fa-dumbbell"></i> Phòng gym riêng</li>
+                            <li><i class="fas fa-spa"></i> Phòng xông hơi</li>
+                            <li><i class="fas fa-car"></i> Đưa đón sân bay</li>
+                            <li><i class="fas fa-user-tie"></i> Quản gia riêng</li>
+                        </ul>
+                        <div class="room-price">
+                            <div class="price">
+                                <span class="amount">12,000,000₫</span>
+                                <span class="period">/ đêm</span>
+                            </div>
+                            <button class="btn-book-room">Đặt Ngay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 4: Family Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800" alt="Family Room">
+                    </div>
+                    <div class="room-info">
+                        <h3>Phòng Gia Đình</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 65m²</span>
+                            <span><i class="fas fa-user"></i> 4-6 Người</span>
+                            <span><i class="fas fa-bed"></i> 2 Giường Queen</span>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><i class="fas fa-wifi"></i> WiFi miễn phí</li>
+                            <li><i class="fas fa-tv"></i> 2 TV màn hình phẳng</li>
+                            <li><i class="fas fa-gamepad"></i> Khu vui chơi trẻ em</li>
+                            <li><i class="fas fa-baby"></i> Dịch vụ trông trẻ</li>
+                            <li><i class="fas fa-utensils"></i> Bếp nhỏ</li>
+                            <li><i class="fas fa-parking"></i> Bãi đậu xe miễn phí</li>
+                        </ul>
+                        <div class="room-price">
+                            <div class="price">
+                                <span class="amount">5,500,000₫</span>
+                                <span class="period">/ đêm</span>
+                            </div>
+                            <button class="btn-book-room">Đặt Ngay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 5: Ocean View Suite -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800" alt="Ocean View Suite">
+                        <div class="room-badge ocean">View Biển</div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Ocean View Suite</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 45m²</span>
+                            <span><i class="fas fa-user"></i> 2 Người</span>
+                            <span><i class="fas fa-bed"></i> 1 Giường King</span>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><i class="fas fa-water"></i> View biển toàn cảnh</li>
+                            <li><i class="fas fa-chair"></i> Ban công riêng</li>
+                            <li><i class="fas fa-tv"></i> Smart TV 65"</li>
+                            <li><i class="fas fa-cocktail"></i> Quầy bar</li>
+                            <li><i class="fas fa-spa"></i> Bồn tắm view biển</li>
+                            <li><i class="fas fa-sun"></i> Đón bình minh tuyệt đẹp</li>
+                        </ul>
+                        <div class="room-price">
+                            <div class="price">
+                                <span class="amount">6,000,000₫</span>
+                                <span class="period">/ đêm</span>
+                            </div>
+                            <button class="btn-book-room">Đặt Ngay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 6: Business Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800" alt="Business Room">
+                    </div>
+                    <div class="room-info">
+                        <h3>Phòng Business</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-ruler-combined"></i> 40m²</span>
+                            <span><i class="fas fa-user"></i> 2 Người</span>
+                            <span><i class="fas fa-bed"></i> 1 Giường Queen</span>
+                        </div>
+                        <ul class="room-amenities">
+                            <li><i class="fas fa-wifi"></i> WiFi tốc độ cao</li>
+                            <li><i class="fas fa-laptop"></i> Bàn làm việc rộng</li>
+                            <li><i class="fas fa-print"></i> Máy in/photocopy</li>
+                            <li><i class="fas fa-briefcase"></i> Phòng họp riêng</li>
+                            <li><i class="fas fa-coffee"></i> Café miễn phí</li>
+                            <li><i class="fas fa-clock"></i> Check-in/out linh hoạt</li>
+                        </ul>
+                        <div class="room-price">
+                            <div class="price">
+                                <span class="amount">3,500,000₫</span>
+                                <span class="period">/ đêm</span>
+                            </div>
+                            <button class="btn-book-room">Đặt Ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tiện Ích Đẳng Cấp</h2>
+                <p>Trải nghiệm những dịch vụ cao cấp nhất</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-swimming-pool"></i>
+                    <h3>Hồ Bơi Vô Cực</h3>
+                    <p>Hồ bơi ngoài trời với view toàn cảnh</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-spa"></i>
+                    <h3>Spa & Wellness</h3>
+                    <p>Dịch vụ chăm sóc sức khỏe cao cấp</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Nhà Hàng 5 Sao</h3>
+                    <p>Ẩm thực đa dạng từ khắp nơi trên thế giới</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Phòng Gym</h3>
+                    <p>Trang thiết bị hiện đại, huấn luyện viên chuyên nghiệp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Biển, Thành Phố</p>
+                    <p><i class="fas fa-phone"></i> 1900 xxxx</p>
+                    <p><i class="fas fa-envelope"></i> info@luxuryhotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo Dõi Chúng Tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxury Hotel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling cho các link điều hướng
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Xử lý sự kiện click nút Đặt Ngay (đã đổi class thành btn-book-room)
+        document.querySelectorAll('.btn-book-room').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Cảm ơn bạn đã quan tâm! Vui lòng liên hệ hotline để được tư vấn chi tiết.');
+            });
+        });
+    </script>
+</body>
+</html>

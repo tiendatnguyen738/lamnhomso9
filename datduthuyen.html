@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Vé Du Thuyền - V-Travel Cruise</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Đảm bảo đã nhúng Font Awesome để hiển thị icon tàu biển và các icon khác -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-group">
+            <img id="logo" src="./img/anh logo.jpg" alt="V-Travel Cruise">
+            <div class="company-name">
+                <span class="company-brand">V-Travel Cruise</span>
+            </div>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="flight.html">Tìm Vé Máy Bay</a></li>
+            <li><a href="cruise.html" class="active">Tìm Du Thuyền</a></li>
+            <li><a href="hotel.html">Tìm Khách Sạn</a></li>
+            <li><a href="auth.html">Đăng Ký / Đăng Nhập</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Search Section -->
+        <section class="search-section" id="book">
+            <div class="container">
+                <h1 class="section-title">Tìm Chuyến Du Thuyền</h1>
+                
+                <div class="search-box">
+                    <div class="trip-type">
+                        <label class="radio-label">
+                            <input type="radio" name="trip" value="oneway" checked>
+                            <span>Một chặng</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="trip" value="roundtrip">
+                            <span>Khứ hồi / Nhiều ngày</span>
+                        </label>
+                    </div>
+
+                    <form class="search-form" id="cruiseSearchForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-ship"></i> Cảng đi</label>
+                                <select id="departurePort" required>
+                                    <option value="">Chọn cảng khởi hành</option>
+                                    <option value="HAN">Cảng Quốc tế Hạ Long</option>
+                                    <option value="DAD">Cảng Đà Nẵng</option>
+                                    <option value="CXR">Cảng Nha Trang</option>
+                                    <option value="PQC">Cảng Phú Quốc</option>
+                                    <option value="SGN">Cảng Sài Gòn (TP.HCM)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-map-marker-alt"></i> Cảng đến / Tuyến</label>
+                                <select id="arrivalPort" required>
+                                    <option value="">Chọn cảng đến hoặc tuyến</option>
+                                    <option value="HAN">Vịnh Hạ Long - Lan Hạ</option>
+                                    <option value="DAD">Cù Lao Chàm - Lý Sơn</option>
+                                    <option value="CXR">Nha Trang - Bình Ba</option>
+                                    <option value="PQC">Phú Quốc - Côn Đảo</option>
+                                    <option value="SGN">TP.HCM - Cần Thơ</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar-alt"></i> Ngày khởi hành</label>
+                                <input type="date" id="departDate" required>
+                            </div>
+
+                            <div class="form-group" id="returnDateGroup" style="display: none;">
+                                <label><i class="fas fa-calendar-check"></i> Ngày kết thúc</label>
+                                <input type="date" id="returnDate">
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-users"></i> Số hành khách</label>
+                                <select id="passengers">
+                                    <option value="1">1 Người</option>
+                                    <option value="2">2 Người</option>
+                                    <option value="3">3 Người</option>
+                                    <option value="4">4 Người</option>
+                                    <option value="5">5+ Người (Nhóm)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-bed"></i> Loại phòng</label>
+                                <select id="cabinClass">
+                                    <option value="inside">Phòng bên trong (Inside)</option>
+                                    <option value="balcony">Phòng có ban công (Balcony)</option>
+                                    <option value="suite">Phòng hạng sang (Suite)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i> Tìm du thuyền
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cruise Results Section -->
+        <section class="results-section" id="results">
+            <div class="container">
+                <h2 class="section-title">Kết Quả Tìm Kiếm Du Thuyền</h2>
+                <div id="cruiseResults" class="flight-results">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section class="booking-section" id="bookingForm">
+            <div class="container">
+                <h2 class="section-title">Thông Tin Đặt Vé Du Thuyền</h2>
+                <form class="booking-form" id="bookingFormElement">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user-friends"></i> Thông tin khách hàng chính</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Họ và tên *</label>
+                                <input type="text" id="fullName" placeholder="Nhập họ tên đầy đủ" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" id="email" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Số điện thoại *</label>
+                                <input type="tel" id="phone" placeholder="0123 456 789" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Số CMND/CCCD/Hộ chiếu *</label>
+                                <input type="text" id="idCard" placeholder="Nhập số giấy tờ tùy thân" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-credit-card"></i> Thông tin thanh toán</h3>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label>Số thẻ *</label>
+                                <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ngày hết hạn *</label>
+                                <input type="month" id="cardExpiry" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mã CVV *</label>
+                                <input type="text" id="cardCVV" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3>Tổng cộng</h3>
+                        <div class="price-row">
+                            <span>Giá phòng/vé:</span>
+                            <span id="ticketPrice">0 ₫</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Phí cảng & dịch vụ:</span>
+                            <span id="taxFee">0 ₫</span>
+                        </div>
+                        <div class="price-row total">
+                            <span>Tổng thanh toán:</span>
+                            <span id="totalPrice">0 ₫</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-book">
+                        <i class="fas fa-check-circle"></i> Xác nhận đặt chỗ
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về chúng tôi</h3>
+                    <p>V-Travel Cruise - Đối tác tin cậy đặt vé du thuyền sang trọng, trải nghiệm đẳng cấp và an toàn.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-phone"></i> 1900 xxxx</p>
+                    <p><i class="fas fa-envelope"></i> support@vtravelcruise.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 V-Travel Cruise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('departDate').min = today;
+        document.getElementById('returnDate').min = today;
+
+        // Trip type toggle
+        document.querySelectorAll('input[name="trip"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const returnDateGroup = document.getElementById('returnDateGroup');
+                if (this.value === 'roundtrip') {
+                    returnDateGroup.style.display = 'block';
+                    document.getElementById('returnDate').required = true;
+                } else {
+                    returnDateGroup.style.display = 'none';
+                    document.getElementById('returnDate').required = false;
+                }
+            });
+        });
+
+        // Cruise search
+        document.getElementById('cruiseSearchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const departDate = document.getElementById('departDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            
+            // Validate dates for roundtrip
+            if (document.querySelector('input[name="trip"]:checked').value === 'roundtrip') {
+                if (returnDate && returnDate < departDate) {
+                    alert('Ngày kết thúc không được sớm hơn ngày khởi hành!');
+                    return;
+                }
+            }
+
+            // Simulate cruise results
+            displayCruiseResults();
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function displayCruiseResults() {
+            const resultsContainer = document.getElementById('cruiseResults');
+            const cruises = [
+                { name: 'Heritage Cruise', route: 'Hạ Long - 2 ngày 1 đêm', time: 'Khởi hành: 12:00', price: 3500000, cabin: 'inside' },
+                { name: 'Stellar of the Seas', route: 'Hạ Long - 3 ngày 2 đêm', time: 'Khởi hành: 15:00', price: 5500000, cabin: 'balcony' },
+                { name: 'Indochina Sails', route: 'Đà Nẵng - Cù Lao Chàm', time: 'Khởi hành: 08:00', price: 4200000, cabin: 'inside' },
+                { name: 'Ambassador Cruise', route: 'Phú Quốc - Côn Đảo', time: 'Khởi hành: 09:00', price: 8500000, cabin: 'suite' }
+            ];
+
+            let html = '';
+            cruises.forEach((cruise, index) => {
+                const cabinLabel = cruise.cabin === 'inside' ? 'Phòng bên trong' : (cruise.cabin === 'balcony' ? 'Phòng có ban công' : 'Phòng hạng sang');
+                
+                html += `
+                    <div class="flight-card" onclick="selectCruise(${index}, ${cruise.price})" style="cursor: pointer; transition: transform 0.2s;">
+                        <div class="flight-info">
+                            <div class="airline">
+                                <i class="fas fa-ship"></i>
+                                <strong>${cruise.name}</strong>
+                                <span class="flight-number">${cruise.route}</span>
+                            </div>
+                            <div class="flight-time">${cruise.time}</div>
+                            <div class="flight-class">${cabinLabel}</div>
+                        </div>
+                        <div class="flight-price">
+                            <div class="price">${formatPrice(cruise.price)}</div>
+                            <button class="btn-select">Chọn phòng</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultsContainer.innerHTML = html;
+        }
+
+        function selectCruise(index, price) {
+            const taxFee = price * 0.08; // Phí cảng và dịch vụ thường khoảng 8%
+            const total = price + taxFee;
+            
+            document.getElementById('ticketPrice').textContent = formatPrice(price);
+            document.getElementById('taxFee').textContent = formatPrice(taxFee);
+            document.getElementById('totalPrice').textContent = formatPrice(total);
+            
+            document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function formatPrice(price) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+        }
+
+        // Booking form submission
+        document.getElementById('bookingFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (fullName && email && phone) {
+                alert('Đặt chỗ du thuyền thành công! Thông tin vé và lịch trình chi tiết sẽ được gửi về email của bạn.');
+                this.reset();
+                // Reset price display
+                document.getElementById('ticketPrice').textContent = '0 ₫';
+                document.getElementById('taxFee').textContent = '0 ₫';
+                document.getElementById('totalPrice').textContent = '0 ₫';
+            }
+        });
+    </script>
+</body>
+</html>
