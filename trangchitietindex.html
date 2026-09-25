@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tour Nổi Bật</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    body { background: #f4f6f9; padding: 20px; }
+    h2 { margin-bottom: 20px; color: #333; text-align: center; }
+
+    /* Lưới 4 Card Tour */
+    .grid { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .card { background: #fff; border-radius: 8px; width: 230px; padding: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 6px; }
+    .card h3 { font-size: 13px; margin: 10px 0; height: 38px; color: #222; line-height: 1.3; }
+    .price { color: #d9534f; font-weight: bold; margin-bottom: 10px; font-size: 14px; }
+    .btn { display: block; background: #007bff; color: #fff; padding: 8px; text-decoration: none; border-radius: 5px; font-size: 13px; font-weight: bold; }
+
+    /* Popup Modal Chi Tiết Giữa Màn Hình */
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 100; }
+    .modal:target { display: flex; }
+    .content { background: #fff; padding: 20px; border-radius: 10px; width: 420px; max-width: 90%; position: relative; text-align: left; }
+    .content img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin: 10px 0; }
+    .content h3 { color: #007bff; font-size: 16px; margin-right: 20px; }
+    .content p { font-size: 13px; color: #444; line-height: 1.5; margin-top: 8px; }
+    .close { position: absolute; top: 8px; right: 15px; text-decoration: none; font-size: 24px; color: #888; font-weight: bold; }
+    .close:hover { color: #000; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <nav class="navbar">
+    <!-- Wrap logo + tên công ty vào 1 div -->
+    <div class="logo-group">
+        <img id="logo" src="./img/anh logo.jpg" alt="V-Travel">
+        <div class="company-name">
+            <span class="company-brand">V-Travel</span>
+        </div>
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="index.html" >Trang Chủ</a></li>
+        <li><a href="flight.html">Tìm Vé Máy Bay</a></li>
+        <li><a href="cruise.html">Tìm Du Thuyền</a></li>
+        <li><a href="hotel.html">Tìm Khách Sạn</a></li>
+        
+    </ul>
+</nav>
+
+  <h2>GIỚI THIỆU VỀ CÁC ĐỊA ĐIỂM NỔI BẬT </h2>
+
+  <!-- Danh sách 4 Tour -->
+  <div class="grid">
+    <div class="card">
+      <img src="./img/mochau.jpg" alt="Mộc Châu">
+      <h3>Mộc Châu</h3>
+      <div class="price">2.790.000 đ</div>
+      <a href="#t1" class="btn">Xem chi tiết</a>
+    </div>
+
+    <div class="card">
+      <img src="./img/nongtruongche1.jpg" alt="nong truong che">
+      <h3>Nông Trường Chè</h3>
+      <div class="price">3.590.000 đ</div>
+      <a href="#t2" class="btn">Xem chi tiết</a>
+    </div>
+
+    <div class="card">
+      <img src="./img/rungthongbanan1.jpg" alt="rung thong ban ang">
+      <h3>Rừng Thông Bản Áng</h3>
+      <div class="price">2.490.000 đ</div>
+      <a href="#t3" class="btn">Xem chi tiết</a>
+    </div>
+
+    
+
+  <!-- Popup 1: Mộc Châu -->
+  <div id="t1" class="modal">
+    <div class="content">
+      <a href="#" class="close">&times;</a>
+      <h3>Mộc Châu</h3>
+      <img src="./img/mocchau2.jpg" alt="Mộc Châu">
+      <p><strong>Giá:</strong> 2.790.000 đ | <strong>Thời gian:</strong> 2 ngày 1 đêm</p>
+      <p><strong>Giới thiệu:</strong> 🌿 Mộc Châu
+Mộc Châu là vùng cao nguyên nổi tiếng của Sơn La, sở hữu khí hậu mát mẻ, những đồi chè xanh trải dài, thung lũng và cảnh quan núi rừng thơ mộng. Đây là điểm đến phù hợp để nghỉ dưỡng, khám phá thiên nhiên và trải nghiệm văn hóa vùng Tây Bắc</p>
+    </div>
+  </div>
+
+  <!-- Popup 2: Mường Thanh -->
+  <div id="t2" class="modal">
+    <div class="content">
+      <a href="#" class="close">&times;</a>
+      <h3>Mộc Châu - Nông Trường Chè</h3>
+      <img src="./img/nongtruongche2.jpg" alt="nong truong che">
+      <p><strong>Giá:</strong> 3.590.000 đ | <strong>Thời gian:</strong> 3 ngày 2 đêm</p>
+      <p><strong>Giới thiệu:</strong> 🍃 Nông trường chè
+Nông trường chè Mộc Châu nổi bật với những đồi chè xanh mướt trải rộng trên cao nguyên. Du khách có thể tham quan, chụp ảnh giữa những luống chè, tìm hiểu về nghề trồng và chế biến chè, đồng thời tận hưởng không khí trong lành của vùng cao. Mộc Châu có khoảng 3.000 ha đồi chè, tạo nên một trong những cảnh quan đặc trưng nhất của khu vực.</p>
+    </div>
+  </div>
+
+  <!-- Popup 3: Bái Đính - Tràng An -->
+  <div id="t3" class="modal">
+    <div class="content">
+      <a href="#" class="close">&times;</a>
+      <h3>RỪNG THÔNG BẢN ÁNG</h3>
+      <img src="./img/rungthongbanang2.jpg" alt="rung thong ban ang">
+      <p><strong>Giá:</strong> 2.490.000 đ | <strong>Thời gian:</strong> 4 ngày 3 đêm</p>
+      <p><strong>Giới thiệu:</strong> 🌲 Rừng thông Bản Áng
+Rừng Thông Bản Áng là điểm du lịch nổi tiếng với những hàng thông xanh bao quanh hồ nước, tạo nên khung cảnh yên bình và lãng mạn. Du khách có thể đi dạo, chụp ảnh, đạp xe và khám phá không gian văn hóa của cộng đồng người Thái tại Bản Áng.</p>
+    </div>
+  </div>
+
+  
+</body>
+</html>
