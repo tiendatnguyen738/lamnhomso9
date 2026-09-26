@@ -1,4 +1,4 @@
-/* --- Yêu cầu 1 & 2: Background #f5f5f5, Font Arial --- */
+
 body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
@@ -6,7 +6,7 @@ body {
     padding: 0;
 }
 
-/* --- Thanh Menu Điều Hướng --- */
+
 .navbar {
     background-color: #ffffff;
     padding: 15px 40px;
@@ -44,7 +44,7 @@ body {
     color: #007bff;
 }
 
-/* --- Khối Banner Ngang Phía Trên --- */
+
 .banner-container {
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@ body {
     border-radius: 8px;
 }
 
-/* --- Thanh Danh Mục / Tabs Dịch Vụ --- */
+
 .category-tabs {
     display: flex;
     justify-content: center;
@@ -87,7 +87,7 @@ body {
     color: #007bff;
 }
 
-/* --- Tiêu Đề Mục --- */
+
 .section-title {
     font-size: 20px;
     font-weight: bold;
@@ -95,7 +95,7 @@ body {
     color: #333;
 }
 
-/* --- Khung Chứa Sản Phẩm (Flexbox) --- */
+
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +104,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- Thẻ Sản Phẩm (Giữ nguyên gốc của bạn) --- */
+
 .product-card {
     width: 320px;
     background-color: #ffffff;
@@ -143,7 +143,7 @@ body {
     background-color: #00346b;
 }
 
-/* --- Chân Trang (Footer) --- */
+
 .footer {
     background-color: #ffffff;
     padding: 40px;
@@ -186,7 +186,7 @@ body {
     color: #007bff;
 }
 
-/* --- Form Đăng Nhập / Đăng Ký --- */
+
 .form-card {
     width: 400px;
     margin: 50px auto;
@@ -216,7 +216,7 @@ body {
     box-sizing: border-box;
 }
 
-/* ===== RESET & BASE ===== */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -265,7 +265,7 @@ img { max-width: 100%; display: block; }
 }
 .btn-login:hover { background: #005fcc; }
 
-/* ===== HERO ===== */
+
 .hero {
     position: relative;
     background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600') center/cover;
@@ -282,7 +282,7 @@ img { max-width: 100%; display: block; }
 .hero h1 { font-size: 42px; margin-bottom: 15px; }
 .hero p { font-size: 18px; margin-bottom: 35px; opacity: 0.95; }
 
-/* ===== SEARCH FORM ===== */
+
 .search-form {
     background: #fff;
     border-radius: 15px;
@@ -331,7 +331,7 @@ img { max-width: 100%; display: block; }
     transform: translateY(-2px);
 }
 
-/* ===== MAIN LAYOUT ===== */
+
 .main { padding: 40px 20px; }
 .layout {
     display: grid;
@@ -339,7 +339,7 @@ img { max-width: 100%; display: block; }
     gap: 30px;
 }
 
-/* ===== SIDEBAR ===== */
+
 .sidebar {
     background: #fff;
     border-radius: 12px;
@@ -402,7 +402,6 @@ img { max-width: 100%; display: block; }
 }
 .btn-reset:hover { background: #e0e8f0; }
 
-/* ===== HOTEL LIST ===== */
 .list-header {
     margin-bottom: 20px;
 }
@@ -416,7 +415,7 @@ img { max-width: 100%; display: block; }
     gap: 25px;
 }
 
-/* ===== HOTEL CARD ===== */
+
 .hotel-card {
     background: #fff;
     border-radius: 12px;
@@ -549,7 +548,7 @@ img { max-width: 100%; display: block; }
 }
 .no-result i { font-size: 60px; margin-bottom: 20px; opacity: 0.3; }
 
-/* ===== MODAL ===== */
+
 .modal {
     display: none;
     position: fixed;
@@ -714,7 +713,7 @@ img { max-width: 100%; display: block; }
 }
 .btn-book:hover { background: #218838; }
 
-/* ===== FOOTER ===== */
+
 .footer {
     background: #1a2332;
     color: #ccc;
@@ -752,7 +751,7 @@ img { max-width: 100%; display: block; }
     font-size: 13px;
 }
 
-/* ===== TOAST ===== */
+
 .toast {
     position: fixed;
     bottom: 30px;
@@ -769,7 +768,7 @@ img { max-width: 100%; display: block; }
 .toast.show { transform: translateX(0); }
 .toast.error { background: #dc3545; }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 968px) {
     .layout { grid-template-columns: 1fr; }
     .sidebar { position: static; }
@@ -785,7 +784,7 @@ img { max-width: 100%; display: block; }
     .form-row { grid-template-columns: 1fr; }
     .hero h1 { font-size: 24px; }
 }
-/* ===== THANH MENU ===== */
+
 .navbar {
     background-color: #ffffff;
     padding: 10px 30px;
@@ -799,16 +798,6 @@ img { max-width: 100%; display: block; }
     z-index: 100;
 }
 
-/* Nhóm logo + tên công ty */
-/* =========================================
-   LOGO ĐỘNG - THU RA CUỘN VÀO LIÊN TỤC
-   ========================================= */
-/* =========================================
-   LOGO EFFECT - BÙNG CHÁY & XUẤT HIỆN
-   ========================================= */
-/* =========================================
-   LOGO V-TRAVEL - THU VÀO BUNG RA + ĐÁM MÂY
-   ========================================= */
 .logo-group {
     display: flex;
     align-items: center;
@@ -818,7 +807,7 @@ img { max-width: 100%; display: block; }
     background: transparent;
 }
 
-/* Ảnh Logo - Hình tròn */
+
 #logo {
     width: 90px;
     height: 90px;
@@ -829,11 +818,11 @@ img { max-width: 100%; display: block; }
     position: relative;
     z-index: 2;
     
-    /* Animation thu vào bung ra liên tục */
+
     animation: thuVaoBungRa 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
-/* Hiệu ứng lửa bao quanh logo */
+
 #logo::before {
     content: '';
     position: absolute;
@@ -854,7 +843,7 @@ img { max-width: 100%; display: block; }
     animation: luaThuBung 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s infinite;
 }
 
-/* Tên công ty */
+
 .company-name {
     display: flex;
     flex-direction: column;
@@ -873,9 +862,7 @@ img { max-width: 100%; display: block; }
     position: relative;
 }
 
-/* =========================================
-   ĐÁM MÂY DƯỚI CHỮ V-TRAVEL
-   ========================================= */
+
 .company-brand::after {
     content: '';
     position: absolute;
@@ -885,14 +872,14 @@ img { max-width: 100%; display: block; }
     width: 120px;
     height: 25px;
     
-    /* Tạo hình đám mây bằng box-shadow */
+   
     background: transparent;
     box-shadow: 
-        /* Đám mây chính - màu vàng gold */
+        
         inset 0 -8px 0 rgba(255, 215, 0, 0.6),
         inset 0 -15px 0 rgba(255, 200, 0, 0.4),
         
-        /* Các đám mây nhỏ hai bên */
+       
         -25px -5px 0 -5px rgba(255, 215, 0, 0.5),
         25px -5px 0 -5px rgba(255, 215, 0, 0.5),
         -40px -8px 0 -10px rgba(255, 215, 0, 0.3),
@@ -903,7 +890,7 @@ img { max-width: 100%; display: block; }
     animation: damMayXuatHien 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
-/* Đám mây phụ - trang trí thêm */
+
 .company-name::before {
     content: '';
     position: absolute;
@@ -920,11 +907,7 @@ img { max-width: 100%; display: block; }
     animation: damMayNho 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s infinite;
 }
 
-/* =========================================
-   KEYFRAMES - THU VÀO BUNG RA
-   ========================================= */
 
-/* Logo: Thu nhỏ -> Bung mạnh -> Trở về */
 @keyframes thuVaoBungRa {
     0%, 100% { 
         transform: scale(1) rotate(0deg); 
@@ -944,7 +927,7 @@ img { max-width: 100%; display: block; }
     }
 }
 
-/* Lửa: Thu theo logo */
+
 @keyframes luaThuBung {
     0%, 100% { 
         opacity: 0.3; 
@@ -964,7 +947,7 @@ img { max-width: 100%; display: block; }
     }
 }
 
-/* Tên công ty: Ẩn khi logo thu, hiện khi logo bung */
+
 @keyframes tenXuatHien {
     0%, 100% { 
         opacity: 1; 
@@ -983,7 +966,7 @@ img { max-width: 100%; display: block; }
     }
 }
 
-/* Đám mây chính xuất hiện */
+
 @keyframes damMayXuatHien {
     0%, 100% { 
         opacity: 1; 
@@ -1003,7 +986,7 @@ img { max-width: 100%; display: block; }
     }
 }
 
-/* Đám mây phụ */
+
 @keyframes damMayNho {
     0%, 100% { 
         opacity: 0.8; 
@@ -1044,7 +1027,7 @@ img { max-width: 100%; display: block; }
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Menu bên phải */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -1068,7 +1051,7 @@ img { max-width: 100%; display: block; }
     background-color: #e6f0ff;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
     .navbar {
         flex-wrap: wrap;
@@ -1359,7 +1342,7 @@ body {
     background: #764ba2;
 }
 
-/* Booking Section */
+
 .booking-section {
     background: white;
     padding: 2rem;

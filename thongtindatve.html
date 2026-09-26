@@ -9,7 +9,7 @@
 </head>
 <body>
       <nav class="navbar">
-    <!-- Wrap logo + tên công ty vào 1 div -->
+ 
     <div class="logo-group">
         <img id="logo" src="./img/anh logo.jpg" alt="V-Travel">
         <div class="company-name">
@@ -26,9 +26,9 @@
     </ul>
 </nav>
 
-    <!-- Main Content -->
+
     <main class="main-content">
-        <!-- Search Section -->
+       
         <section class="search-section" id="book">
             <div class="container">
                 <h1 class="section-title">Tìm Chuyến Bay</h1>
@@ -112,7 +112,7 @@
             </div>
         </section>
 
-        <!-- Flight Results Section -->
+        
         <section class="results-section" id="results">
             <div class="container">
                 <h2 class="section-title">Kết Quả Tìm Kiếm</h2>
@@ -122,7 +122,6 @@
             </div>
         </section>
 
-        <!-- Booking Form Section -->
         <section class="booking-section" id="bookingForm">
             <div class="container">
                 <h2 class="section-title">Thông Tin Đặt Vé</h2>
@@ -224,7 +223,7 @@
     </footer>
 
     <script>
-        // Set minimum date to today
+       
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('departDate').min = today;
         document.getElementById('returnDate').min = today;
@@ -243,7 +242,7 @@
             });
         });
 
-        // Flight search
+       
         document.getElementById('flightSearchForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -255,10 +254,10 @@
                 return;
             }
 
-            // Simulate flight results
+          
             displayFlightResults();
             
-            // Scroll to results
+           
             document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         });
 
@@ -310,11 +309,11 @@
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
         }
 
-        // Booking form submission
+     
         document.getElementById('bookingFormElement').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validate form
+       
             const fullName = document.getElementById('fullName').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;

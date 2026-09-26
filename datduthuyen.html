@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đặt Vé Du Thuyền - V-Travel Cruise</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Đảm bảo đã nhúng Font Awesome để hiển thị icon tàu biển và các icon khác -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,9 +26,9 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
+    
     <main class="main-content">
-        <!-- Search Section -->
+       
         <section class="search-section" id="book">
             <div class="container">
                 <h1 class="section-title">Tìm Chuyến Du Thuyền</h1>
@@ -112,7 +112,7 @@
             </div>
         </section>
 
-        <!-- Cruise Results Section -->
+        
         <section class="results-section" id="results">
             <div class="container">
                 <h2 class="section-title">Kết Quả Tìm Kiếm Du Thuyền</h2>
@@ -122,7 +122,7 @@
             </div>
         </section>
 
-        <!-- Booking Form Section -->
+      
         <section class="booking-section" id="bookingForm">
             <div class="container">
                 <h2 class="section-title">Thông Tin Đặt Vé Du Thuyền</h2>
@@ -224,7 +224,7 @@
     </footer>
 
     <script>
-        // Set minimum date to today
+        
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('departDate').min = today;
         document.getElementById('returnDate').min = today;
@@ -243,7 +243,7 @@
             });
         });
 
-        // Cruise search
+        
         document.getElementById('cruiseSearchForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -258,10 +258,10 @@
                 }
             }
 
-            // Simulate cruise results
+         
             displayCruiseResults();
             
-            // Scroll to results
+            
             document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         });
 
@@ -315,7 +315,7 @@
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
         }
 
-        // Booking form submission
+       
         document.getElementById('bookingFormElement').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -326,7 +326,7 @@
             if (fullName && email && phone) {
                 alert('Đặt chỗ du thuyền thành công! Thông tin vé và lịch trình chi tiết sẽ được gửi về email của bạn.');
                 this.reset();
-                // Reset price display
+                
                 document.getElementById('ticketPrice').textContent = '0 ₫';
                 document.getElementById('taxFee').textContent = '0 ₫';
                 document.getElementById('totalPrice').textContent = '0 ₫';

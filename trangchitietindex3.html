@@ -8,7 +8,7 @@
     body { background: #f4f6f9; padding: 20px; }
     h2 { margin-bottom: 20px; color: #333; text-align: center; }
 
-    /* Lưới 4 Card Tour */
+  
     .grid { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
     .card { background: #fff; border-radius: 8px; width: 230px; padding: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 6px; }
@@ -16,7 +16,7 @@
     .price { color: #d9534f; font-weight: bold; margin-bottom: 10px; font-size: 14px; }
     .btn { display: block; background: #007bff; color: #fff; padding: 8px; text-decoration: none; border-radius: 5px; font-size: 13px; font-weight: bold; }
 
-    /* Popup Modal Chi Tiết Giữa Màn Hình */
+
     .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 100; }
     .modal:target { display: flex; }
     .content { background: #fff; padding: 20px; border-radius: 10px; width: 420px; max-width: 90%; position: relative; text-align: left; }
@@ -30,7 +30,7 @@
 </head>
 <body>
      <nav class="navbar">
-    <!-- Wrap logo + tên công ty vào 1 div -->
+   
     <div class="logo-group">
         <img id="logo" src="./img/anh logo.jpg" alt="V-Travel">
         <div class="company-name">
@@ -49,7 +49,7 @@
 
   <h2>GIỚI THIỆU VỀ CÁC ĐỊA ĐIỂM NỔI BẬT </h2>
 
-  <!-- Danh sách 4 Tour -->
+
   <div class="grid">
     <div class="card">
       <img src="img/HN.jpg" alt="hanoi">
@@ -81,7 +81,6 @@
 
     
 
-  <!-- Popup 1: Mộc Châu -->
   <div id="t1" class="modal">
     <div class="content">
       <a href="#" class="close">&times;</a>
@@ -92,7 +91,7 @@
     </div>
   </div>
 
-  <!-- Popup 2: Mường Thanh -->
+
   <div id="t2" class="modal">
     <div class="content">
       <a href="#" class="close">&times;</a>
@@ -103,7 +102,7 @@
     </div>
   </div>
 
-  <!-- Popup 3: Bái Đính - Tràng An -->
+  
   <div id="t3" class="modal">
     <div class="content">
       <a href="#" class="close">&times;</a>
